@@ -67,18 +67,15 @@
   </p>
 
 
-  <img src="Ta5OGDj.gif">
-  <img src="Ta5OGDj.gif">
+  <img class="fire" src="Ta5OGDj.gif">
+  <img class="fire" src="Ta5OGDj.gif">
 
 <script>
 
-  function kliederen() {
-    var texts = $('p');
-    setTimeout(kliederen, 3000);
-  }
-
   $(function() {
-    // kliederen();
+    $('.fire').click(function() {
+      -webkit-filter: blur(6px);
+    });
   });
 </script>
 
