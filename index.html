@@ -59,6 +59,7 @@
 
 	let range = 'bytes=' + from + "-" + to;
 
+	// it's actually this big: https://norvig.com/big.txt but copied
 	fetch("/big.txt", {
         	headers: {
             		'range': range,
