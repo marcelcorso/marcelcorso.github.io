@@ -30,6 +30,7 @@
     }
   </style>
   <script async id='hull-js-sdk' data-app-id='605072bf915fd78ca419a272' data-org-url='https://marceldevorg1.web.hullapp.io' src='https://js.hull.io/0.10.0/hull.js.gz'></script>
+  <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
 </head>
 <body>
   <h1>Marcel!</h1>
@@ -73,6 +74,17 @@
 	    	});
     	});
 </script>  
+
+<script>
+  const beamsClient = new PusherPushNotifications.Client({
+    instanceId: 'de928e37-6922-4497-b7a7-a46f9b8d3048',
+  });
+
+  beamsClient.start()
+    .then(() => beamsClient.addDeviceInterest('hello'))
+    .then(() => console.log('Successfully registered and subscribed!'))
+    .catch(console.error);
+</script>
 
 
 <script>var MessageBirdChatWidgetSettings = { widgetId: '52777130-13c5-4234-84f2-0c316a30d0db', initializeOnLoad: true, }; !function(){"use strict";if(window.MessageBirdChatWidget)window.MessageBirdChatWidget.setConfig(window.MessageBirdChatWidgetSettings);else{var t,e,i=(null ===(t=window)||void 0===t||null===(e=t.MessageBirdChatWidgetSettings) ||void 0===e?void 0:e.widgetId)||"",n=function(){var t,e=document.createElement("script");e.type="text/javascript",e.src="https://livechat.messagebird.com/bootstrap.js?widgetId=".concat(i),e.async=!0,e.id="live-chat-widget-script";var n=document.getElementsByTagName("script")[0];null==n||null===(t=n.parentNode)||void 0===t||t.insertBefore(e,n)};"complete"===document.readyState?n():window.attachEvent?window.attachEvent("onload",n):window.addEventListener("load",n,!1)}}();</script>
