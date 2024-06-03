@@ -119,14 +119,31 @@
   // Set the chat widget attributes
   waitForChatLoad().then((chat) => {
     chat.onLoad(() => {
-      window.mbchat.setAttributes({
-        user: {
-          userName: 'johnDoe99',
-          firstName: 'John',
-        },
-        company: {
-          name: 'Company Inc.',
-        },
+
+        fetch('https://extreme-ip-lookup.com/json/')
+          .then(res => res.json())
+          .then(res => {
+            console.log(res);
+            document.getElementById('target').innerHTML = `Your location is: ${res.city}, ${res.region}, ${res.country}`;
+
+
+              window.mbchat.setAttributes({
+                user: {
+                  userName: 'johnDoe99',
+                  firstName: 'John',
+                  city: res.city,
+                },
+                company: {
+                  name: 'Company Inc.',
+                },
+              });
+
+
+          })
+          .catch((data, status) => {
+            console.log('Request failed');
+          })
+
       });
     });
   });
