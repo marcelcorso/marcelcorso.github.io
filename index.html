@@ -96,58 +96,6 @@
 <messagebird-chat project-id="d4104e0f-1416-462a-8ffa-7a93bd492f74" workspace-id="df055128-77fd-4629-b106-2006cde62897"></messagebird-chat>
 
 
-<script>
-  // Function to wait for the chat widget to load
-  function waitForChatLoad() {
-    return new Promise((resolve) => {
-      if (document.querySelector('messagebird-chat')) {
-        return resolve(document.querySelector('messagebird-chat'));
-      }
-      const observer = new MutationObserver(() => {
-        if (document.querySelector('messagebird-chat')) {
-          observer.disconnect();
-          resolve(document.querySelector('messagebird-chat'));
-        }
-      });
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
-    });
-  }
-
-  // Set the chat widget attributes
-  waitForChatLoad().then((chat) => {
-    chat.onLoad(() => {
-
-        fetch('https://extreme-ip-lookup.com/json/')
-          .then(res => res.json())
-          .then(res => {
-            console.log(res);
-            document.getElementById('target').innerHTML = `Your location is: ${res.city}, ${res.region}, ${res.country}`;
-
-
-              window.mbchat.setAttributes({
-                user: {
-                  userName: 'johnDoe99',
-                  firstName: 'John',
-                  city: res.city,
-                },
-                company: {
-                  name: 'Company Inc.',
-                },
-              });
-
-
-          })
-          .catch((data, status) => {
-            console.log('Request failed');
-          })
-
-      });
-    });
-</script>
-
 <!--Gorgias Chat Widget Start-->
 <script id="gorgias-chat-widget-install-v3" 
     src="https://config.gorgias.chat/bundle-loader/01HSXCG0VK9HMZAKNEVSCSAVW7">
@@ -156,6 +104,25 @@
 
 
 <script src="//code.tidio.co/wypklvj79zs6bj5a79qfjezck82gcshh.js" async></script>
+
+<script>
+  window.mbcontext = window.mbcontext || {};
+  function mbsetcontext() {
+    mbcontext = arguments[0];
+  }
+
+  window.mbsetcontext({
+    user: {
+      userName: 'johnDoe99',
+      firstName: 'John',
+      city: 'Curitiba',
+    },
+    company: {
+      name: 'Company Inc.',
+    },
+  });
+</script>
+
 
 </body>
 </html>
