@@ -93,7 +93,13 @@
 
 
 <script defer type="module" src="https://embeddables.p.mbirdcdn.net/v1/web-components.es.js"></script>
-<messagebird-chat project-id="d4104e0f-1416-462a-8ffa-7a93bd492f74" workspace-id="df055128-77fd-4629-b106-2006cde62897"></messagebird-chat>
+
+<script>
+  const workspaceId = "df055128-77fd-4629-b106-2006cde62897"
+  window.mbembeds = window.mbembeds || [];
+  function mbinit(){mbembeds.push(arguments);}
+  mbinit(workspaceId);
+</script>
 
 
 <!--Gorgias Chat Widget Start-->
@@ -111,6 +117,8 @@
     mbcontext = arguments[0];
   }
 
+  
+
   window.mbsetcontext({
     user: {
       userName: 'johnDoe99',
@@ -121,6 +129,8 @@
       name: 'Company Inc.',
     },
   });
+
+
 </script>
 
 
