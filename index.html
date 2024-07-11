@@ -124,8 +124,19 @@
     },
   });
 
+    document.getElementById("bla").addEventListener("mouseup", (event) => {
+        let st = window.getSelection().toString();
+        if (st != "") {
+            Bird.tracker.track("text-selected", {
+                "selection": window.getSelection().toString()
+            }); 
+        }
+    });
+
 
 </script>
+
+
 
 
 </body>
