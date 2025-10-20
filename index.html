@@ -39,6 +39,34 @@
     }
   </style>
 
+  <script>
+    window.BIRD_CONFIG_URL = 'https://api.sandbox.bird.one/workspaces/3ab4d5d4-33a7-4b2a-a822-709302e6ad75/applications/f358f927-34ba-4d3e-8c2b-fcf9f5f8c03b/signature/2024-04-08T08-33-12_4d962c6c33';
+    window.birdAsyncInit = function(sdk, conf) {
+      const mergedConfig = {
+        ...conf,
+        tracking: {
+          ...conf.tracking,
+          enabled: true,
+          trackElementClicks: true,
+        },
+      };
+            
+      sdk.init({
+        config: mergedConfig,
+        appVersion: "1777f6cc-e03a-4894-ab13-ed985293d5dd",
+        appNamespace: "07a09b87-b1fa-43cd-a062-4716b48435fb",
+      })
+    };
+  </script>
+  <script
+    
+    async
+    src="https://embeddables.sandbox.mbirdcdn.net/sdk/v0/bird-sdk.js"
+    data-config-url="https://api.sandbox.bird.one/workspaces/3ab4d5d4-33a7-4b2a-a822-709302e6ad75/applications/f358f927-34ba-4d3e-8c2b-fcf9f5f8c03b/signature/2024-04-08T08-33-12_4d962c6c33"
+    data-app-version="1777f6cc-e03a-4894-ab13-ed985293d5dd"
+    data-app-namespace="07a09b87-b1fa-43cd-a062-4716b48435fb"
+  ></script>
+
 </head>
 <body>
   <h1>Marcel!</h1>
@@ -85,74 +113,9 @@
     	});
 </script>  
 
-<h2>Tell me about bamboo socks!</h2>
-<messagebird-form project-id="dddd5283-c290-4534-92b0-beb2b97cb66a" workspace-id="df055128-77fd-4629-b106-2006cde62897"></messagebird-form>
-
-<script
-	src="https://embeddables.p.mbirdcdn.net/sdk/v0/bird-sdk.js"
-	data-config-url="https://api.bird.com/workspaces/df055128-77fd-4629-b106-2006cde62897/applications/670eb989-5d11-4f51-aa88-2d2cb09cc679/signature/2024-06-17T17-12-51_f26ea3cb4d"
-></script>
-
-
-<hr/>
-
-<h2>Let's talk about socks again. Do this quiz!</h2>
-
-<messagebird-form project-id="2883bcf1-f669-42a8-87b2-05f64742d7f8" workspace-id="df055128-77fd-4629-b106-2006cde62897"></messagebird-form>
-
-
-
-<h2>Cars! Much excite. No traffic jam</h2>
-
-<messagebird-form project-id="c3dc57ea-00fe-47bf-84b5-58cbe4c3a010" workspace-id="df055128-77fd-4629-b106-2006cde62897"></messagebird-form>
 
 <div style="height: 300px">
 </div>
-
-
-<!--Gorgias Chat Widget Start-->
-<script id="gorgias-chat-widget-install-v3" 
-    src="https://config.gorgias.chat/bundle-loader/01HSXCG0VK9HMZAKNEVSCSAVW7">
-</script>
-<!--Gorgias Chat Widget End-->
-
-
-<script src="//code.tidio.co/wypklvj79zs6bj5a79qfjezck82gcshh.js" async></script>
-
-<script>
-
-/*
-  window.mbcontext = window.mbcontext || {};
-  function mbsetcontext() {
-    mbcontext = arguments[0];
-  }
-
-  
-
-  window.mbsetcontext({
-    user: {
-      userName: 'johnDoe99',
-      firstName: 'John',
-      city: 'Curitiba',
-    },
-    company: {
-      name: 'Company Inc.',
-    },
-  });
-
-    document.getElementById("bla").addEventListener("mouseup", (event) => {
-        let st = window.getSelection().toString();
-        if (st != "") {
-            Bird.tracker.track("text-selected", {
-                "selection": window.getSelection().toString()
-            }); 
-        }
-    });
-*/
-
-</script>
-
-
 
 
 </body>
